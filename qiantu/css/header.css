@@ -16,9 +16,17 @@
 	border-bottom: #e9e9e9 1px solid;
 }
 
+
 /***************设置图层等级，下拉时覆盖在上方***********************/
 .qt-header .qt-container{
 	z-index: 10;
+}
+
+/*************设置fixed定位*******************/
+.qt-header-fixed{
+	position: fixed;
+	left: 0;
+	top: 0;
 }
 
 /***********************************顶部版心容器**************************************/
@@ -62,6 +70,7 @@
 
 /*************渐变************/
 .qt-header-button button:last-child{
+	margin-right: 1px;
 	color: #fff;
     background: -webkit-gradient(linear,left top,right top,from(#17e66c),to(#10c55b));
     background: -webkit-linear-gradient(left,#17e66c,#10c55b);
@@ -214,12 +223,12 @@
 }
 
 /***********图标消失*************/
-.hover-box:hover .iconfont{
+.qt-header .qt-container .hover-box:hover .iconfont{
 	display:none;
 }
 
 /*************显示文字***************/
-.hover-box:hover a{
+.qt-header .qt-container .hover-box:hover a{
 	display:block;
 }
 
@@ -237,16 +246,100 @@
 	z-index: 10;
 }
 
+/****************导航栏搜索栏******************/
+
+/*****显示*******/
+.qt-header-fixed .qt-nav-search{
+	display: inline-block !important;
+}
+
+.qt-nav .qt-nav-search{
+	position: relative;
+	width: 400px;
+    height: 40px;
+    /*display: none;*/
+   	display: none;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-left: -86px;
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #e9e9e9;
+    z-index: 8;
+}
+/******分类*******/
+.qt-nav .qt-nav-search .btn-classify{
+	position: absolute;
+	left: 0;
+	width: 83px;
+	height: 100%;
+	line-height: 40px;
+	font-size: 14px;
+	color: #666;
+	text-align: center;
+	background: #f7f7f7;
+	border-radius: 4px 0 0 4px;
+    cursor: pointer;
+}
+
+.qt-nav .qt-nav-search .btn-classify .iconfont {
+    font-size: 12px;
+    color: #666;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+/******输入框*******/
+.qt-nav .qt-nav-search .input-search{
+	width: 100%;
+	height: 100%;
+	padding: 0 83px;
+}
+
+.qt-nav .input-search input {
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    color: #666;
+}
+
+/******搜索按钮*******/
+.qt-nav-search .btn-search{
+	position: absolute;
+	display: inline-block;
+    right: 1px;
+    top: 0;
+    width: 84px;
+    height: 100%;
+    line-height: 40px;
+    margin: 0 -1px 0 0;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    background: -webkit-gradient(linear,left top,right top,from(#17e66c),to(#10c55b));
+    background: -webkit-linear-gradient(left,#17e66c,#10c55b);
+    background: -moz- oldlinear-gradient(left,#17e66c,#10c55b);
+    background: linear-gradient(to right,#17e66c,#10c55b);
+    border: 0;
+}
+
+.btn-search .iconfont{
+	color: #fff;
+	font-size: 24px;
+}
+
 /***********导航栏菜单栏设置行内块级 **************/
-.qt-nav-wrap{
+
+
+/******菜单栏样式******/
+.qt-nav .qt-nav-wrap{
 	display: inline-block;
 	height: inherit;	/*继承父级高度*/
 	line-height: 52px;
 	vertical-align: middle;
-	color: #666666;
+	color: #666;
 }
 
-.qt-nav-wrap a{
+.qt-nav .qt-nav-wrap a{
 	position: relative;
 	display: block;
 	padding: 0 16px;
@@ -254,25 +347,107 @@
 	text-align: center;
 }
 
-.qt-nav-wrap .dot{
+.qt-nav .qt-nav-wrap .dot{
 	font-size: 14px;
     color: inherit;
     padding: 0 5px;
 }
 
-.qt-nav .arrow{
-	position: absolute;
-	top: 52px;
-	width: 20px;
-	height: 20px;
-	background-color: inherit;
+/**********箭头*************/
+.qt-nav .arrow:after {
+    display: none;
+    content: "";	/***必须设置***/
+    position: absolute;
+    top: 52px;
+    left: 50%;
+    margin-left: -8px;
+    border: 8px solid transparent;
+    border-top-color: #13d564;
+    z-index: 5;
+}
+
+.qt-nav .hover-box:hover .arrow:after{
+	display: block;
+}
+
+/************蓝色***********/
+.qt-nav .blue:hover{
+	background-image: -webkit-gradient(linear,left top,right top,from(#0f98ff),to(#1980ff));
+    background-image: -webkit-linear-gradient(left,#0f98ff,#1980ff) !important;
+    background-image: -moz-oldlinear-gradient(left,#0f98ff,#1980ff);
+    background-image: linear-gradient(to right,#0f98ff,#1980ff) !important;
+    border-color: #0f98ff !important;
+}
+
+.qt-nav .blue .arrow:after{
+	border-top-color: #148cff !important;
 }
 
 /***********中间导航栏下拉****************/
+
+/******显示*******/
+.qt-nav-wrap:hover .qt-nav-wrap-drop{
+	display: flex;
+}
+
+
+/******下拉框样式*******/
 .qt-nav-wrap-drop{
 	position: absolute;
+	top: 52px;
+	left: 0;
+	width: 100%;
+	height: 108px;
+	background-color: #fff;
+	box-shadow: 0 3px 7px 0 rgba(0,0,0,.16);
 	display: none;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	text-align: center;
+    font-size: 0;
 }
+
+/********中间导航栏下拉列表************/
+.qt-nav-wrap-drop a{
+	position: relative;
+    /*display: inline-block;*/
+    padding-top: 22px;
+    width: 112px;
+    height: inherit;
+    text-align: center;
+    background-color: transparent;
+}
+
+/********图标成块级 独占一行*********/
+.qt-nav-wrap-drop a>i{
+	display: block;
+	width: 32px;
+	height: 32px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	font-size: 31px;
+	color: #10c55b;
+}
+
+.qt-nav .blue a>i{
+	color: #0f98ff;
+}
+
+.qt-nav-wrap-drop a>span{
+	font-size: 14px;
+    color: #666;
+}
+/*******添加悬浮样式********/
+.qt-nav-wrap-drop a:hover span{
+	color: #10c55b;
+}
+
+.qt-nav .blue a:hover span{
+	color: #0f98ff;
+}
+
+
 
 /***********************************************************************/
 
@@ -281,4 +456,8 @@
 	.qt-container{
 		width: 100%;
 	}
+}
+
+body{
+	height: 1200px;
 }

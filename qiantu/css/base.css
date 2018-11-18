@@ -27,7 +27,7 @@ body {
 
 body {
   /*设置基本字体配置*/
-  font: 1rem 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', Arial, sans-serif;
+  font: 1rem 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei','iconfont', Arial, sans-serif;
   /*让绝对定位元素，根据 body 定位*/
   position: relative;
   /*设置网页基本字体颜色为浅灰色*/
@@ -245,9 +245,9 @@ template {
 
 @font-face {
   font-family: 'iconfont';  /* project id 923042 */
-  src: url('//at.alicdn.com/t/font_923042_tuf2yqtsnpi.eot');
-  src: url('//at.alicdn.com/t/font_923042_tuf2yqtsnpi.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_923042_tuf2yqtsnpi.woff') format('woff'),
-  url('//at.alicdn.com/t/font_923042_tuf2yqtsnpi.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_923042_tuf2yqtsnpi.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_923042_cq70zqoaexs.eot');
+  src: url('//at.alicdn.com/t/font_923042_cq70zqoaexs.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_923042_cq70zqoaexs.woff') format('woff'),
+  url('//at.alicdn.com/t/font_923042_cq70zqoaexs.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_923042_cq70zqoaexs.svg#iconfont') format('svg');
 }

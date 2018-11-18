@@ -10,15 +10,85 @@
 	<body>
 		<header class="qt-header">
 			<nav class="qt-nav">
+				<div class="qt-nav-search clearfix">
+					<div class="btn-classify pull-left">
+						<i class="iconfont">&#xe638;</i>
+						 分类 
+					</div>
+					<div class="input-search">
+						<input type="text" name="search" placeholder="9,600,200免费设计素材任意下载"/>
+					</div>
+					<div class="btn-search pull-right">
+						<a href="#">
+							<i class="iconfont">&#xe61c;</i>
+						</a>
+					</div>
+				</div>
 				<div class="qt-nav-wrap hover-box">
-					<div class="arrow"></div>
-					<a href="#">设计创意</a>
+					<a class="arrow" href="#">设计创意</a>
 					<div class="qt-nav-wrap-drop">
-						
+						<a href="#" target="_blank">
+							<i class="iconfont">&#xe60d;</i>
+							<span>平面广告</span>
+						</a>
+						<a href="#" target="_blank">
+							<i class="iconfont">&#xe60f;</i>
+							<span>电商淘宝</span>
+						</a>
+						<a href="#" target="_blank">
+							<i class="iconfont">&#xe609;</i>
+							<span>装饰装修</span>
+						</a>
+						<a href="#" target="_blank">
+							<i class="iconfont">&#xe60a;</i>
+							<span>网页UI</span>
+						</a>
+						<a href="#" target="_blank">
+							<i class="iconfont">&#xe608;</i>
+							<span>视频音效</span>
+						</a>
+						<a href="#" target="_blank">
+							<i class="iconfont">&#xe607;</i>
+							<span>产品工业</span>
+						</a>
+						<a href="#" target="_blank">
+							<i class="iconfont">&#xe60b;</i>
+							<span>高清图库</span>
+						</a>
+						<a href="#" target="_blank">
+							<i class="iconfont">&#xe640;</i>
+							<span>背景</span>
+						</a>
+						<a href="#" target="_blank">
+							<i class="iconfont">&#xe60c;</i>
+							<span>设计元素</span>
+						</a>
 					</div>
 				</div>	
-				<div class="qt-nav-wrap">
-					<a href="#">办公创意</a>
+				<div class="qt-nav-wrap hover-box blue">
+					<a href="#" class="arrow">办公创意</a>
+					<div class="qt-nav-wrap-drop">
+						<a href="#" target="_blank">
+							<i class="iconfont">&#xe63d;</i>
+							<span>PPT模板</span>
+						</a>
+						<a href="#" target="_blank">
+							<i class="iconfont">&#xe610;</i>
+							<span>Excel模板</span>
+						</a>
+						<a href="#" target="_blank">
+							<i class="iconfont">&#xe60d;</i>
+							<span>简历模板</span>
+						</a>
+						<a href="#" target="_blank">
+							<i class="iconfont">&#xe614;</i>
+							<span>Word模板</span>
+						</a>
+						<a href="#" target="_blank">
+							<i class="iconfont">&#xe612;</i>
+							<span>云模板</span>
+						</a>
+					</div>
 				</div>	
 				<div class="qt-nav-wrap hover-box">
 					<a href="#">正版创意</a>
@@ -27,11 +97,33 @@
 					<a href="#">创意趋势</a>
 				</div>	
 				<div class="qt-nav-wrap hover-box">
-					<a href="#">
+					<a href="#" class="arrow">
 						<span class="dot">
                         	•  •  •
                    		</span>
 					</a>
+					<div class="qt-nav-wrap-drop">
+						<a href="#" target="_blank">
+							<i class="iconfont">&#xe67d;</i>
+							<span>活动</span>
+						</a>
+						<a href="#" target="_blank">
+							<i class="iconfont">&#xe602;</i>
+							<span>每日最新</span>
+						</a>
+						<a href="#" target="_blank">
+							<i class="iconfont">&#xe606;</i>
+							<span>Q群联盟</span>
+						</a>
+						<a href="#" target="_blank">
+							<i class="iconfont">&#xe604;</i>
+							<span>设计工具</span>
+						</a>
+						<a href="#" target="_blank">
+							<i class="iconfont">&#xe603;</i>
+							<span>样机专区</span>
+						</a>
+					</div>
 				</div>
 			</nav>
 			<section class="qt-container">
@@ -88,3 +180,17 @@
 		</header>
 	</body>
 </html>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js" ></script>
+<script>
+	$(window).scroll(function(){
+		if($(window).scrollTop()>120){
+			$(".qt-header").addClass('qt-header-fixed');
+			$(".qt-header .qt-nav .qt-nav-wrap:gt(1)").css({'display':'none'});
+		}else{
+			if($(".qt-header").hasClass('qt-header-fixed')){
+				$(".qt-header").removeClass('qt-header-fixed');
+				$(".qt-header .qt-nav .qt-nav-wrap:gt(1)").css({'display':'inline-block'});
+			}
+		}
+	})
+</script>
