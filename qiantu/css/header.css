@@ -2,25 +2,138 @@
 .qt-container{
 	position: relative;
 	width: 90%;
-	/*height: 52px;*/
 	margin: 0 auto;
 }
 
-/**************导航栏容器*****************/
-.qt-header{
+/**************板块容器*****************/
+.qt-header,.qt-footer,.qt-content{
 	position: relative;
 	width: 100%;
-	height: 52px;
 	min-width: 1200px;
 	background-color: #fff;
-	border-bottom: #e9e9e9 1px solid;
+}
+
+/*********颜色***********/
+.green{
+    background: -webkit-linear-gradient(left,#17e66c,#10c55b);
+    background: linear-gradient(to right,#17e66c,#10c55b);
+}
+
+/************搜索************/
+/*********分类********/
+.btn-classify{
+	position: absolute;
+	left: 0;
+	width: 83px;
+	height: 100%;
+	line-height: 44px;
+	font-size: 14px;
+	color: #666;
+	text-align: center;
+	background: #f7f7f7;
+	border-radius: 4px 0 0 4px;
+    cursor: pointer;
+}
+.btn-classify .iconfont {
+    font-size: 13px;
+    color: #666;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+/*********输入框********/
+.input-search{
+	width: 100%;
+	height: 100%;
+	padding-left: 83px;
+}
+
+.input-search input {
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    color: #666;
+    text-align: left;
+ 	text-indent: 12px;
+}
+
+/******搜索按钮*******/
+.btn-search{
+	position: absolute;
+	display: inline-block;
+    right: 1px;
+    top: 0;
+    width: 84px;
+    height: 100%;
+    line-height: 40px;
+    margin: 0 -1px 0 0;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+.btn-search .iconfont{
+	color: #fff;
+	font-size: 24px;
+}
+
+/*****搜索结果*******/
+.search-result{
+	position: absolute;
+	left: 0;
+	top: 41px;
+	display: none;
+	width: 86%;
+	box-shadow: 0 3px 7px 0 rgba(0,0,0,.16);
+    background: #fff;
+}
+
+.search-result .result-list{
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    padding: 0 12px;
+}
+/********索引*********/
+.search-result .result-list .list-tab{
+	margin: 8px 10px 0 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    color: #fff;
+    background-color: silver;
+    line-height: 1.3;
+    text-align: center;
+    font-size: 12px;
+    font-family: Arial,Helvetica,sans-serif;
+}
+/********标题名称*********/
+.search-result .result-list .list-name{
+	font-size: 14px;
+    color: #666;
+}
+/********数量*********/
+.search-result .result-list .list-count{
+	font-size: 12px;
+    color: #999;
+}
+/********悬浮效果********/
+.search-result dl:hover{
+	background-color: #F7F7F7;
 }
 
 
-/***************设置图层等级，下拉时覆盖在上方***********************/
-.qt-header .qt-container{
+/**************顶部导航栏*****************/
+.qt-header{
+	height: 52px;
+	border-bottom: #e9e9e9 1px solid;
 	z-index: 10;
 }
+
+/**************底部版权*****************/
+.qt-footer{
+	margin-bottom: 0;
+	z-index: 1;
+}
+
 
 /*************设置fixed定位*******************/
 .qt-header-fixed{
@@ -35,14 +148,8 @@
 	height: 52px;
 	line-height: 52px;
 }
-
-.qt-logo a{
-	display: block;
-}
-
-.qt-logo img{
-	vertical-align: middle;
-}
+.qt-logo a{ display: block; }
+.qt-logo img{ vertical-align: middle; }
 
 /***************按钮******************/
 .qt-header-button{
@@ -64,24 +171,16 @@
     border-radius: 4px;
 }
 
-.qt-header-button button:first-child{
-	border: 1px solid #DCDCDC;
-}
+.qt-header-button button:first-child{ border: 1px solid #DCDCDC; }
 
 /*************渐变************/
 .qt-header-button button:last-child{
 	margin-right: 1px;
 	color: #fff;
-    background: -webkit-gradient(linear,left top,right top,from(#17e66c),to(#10c55b));
-    background: -webkit-linear-gradient(left,#17e66c,#10c55b);
-    background: -moz- oldlinear-gradient(left,#17e66c,#10c55b);
-    background: linear-gradient(to right,#17e66c,#10c55b);
 }
 
 /*************悬停阴影****************/
-.qt-header-button button:hover{
-	box-shadow: 0 3px 3px #E9E9E9;
-}
+.qt-header button:hover{ box-shadow: 0 3px 3px #E9E9E9; }
 
 /**************上传，vip*******************/
 .qt-header-upload,.qt-header-vip{
@@ -168,26 +267,11 @@
 }
 
 /**********设置不同vip图片（通过精灵图）***********/
-.qt-header-drop-wrap .gx{
-    background-position: 0 -73px;
-}
-
-.qt-header-drop-wrap .yc{
-    background-position: -123px 0;
-}
-
-.qt-header-drop-wrap .bg{
-    background-position: -45px -73px;
-}
-
-.qt-header-drop-wrap .super{
-    background-position: -67px 0px;
-    width: 54px !important;
-}
-
-.qt-header-drop-wrap .qy{
-    background-position: -67px -33px;
-}
+.qt-header-drop-wrap .gx{ background-position: 0 -73px;	}
+.qt-header-drop-wrap .yc{ background-position: -123px 0; }
+.qt-header-drop-wrap .bg{ background-position: -45px -73px; }
+.qt-header-drop-wrap .super{ background-position: -67px 0px; width: 54px !important; }
+.qt-header-drop-wrap .qy{ background-position: -67px -33px;	}
 
 /***********设置弹性盒子**************/
 .qt-header-vip:hover .qt-header-container-drop{
@@ -214,7 +298,7 @@
 
 /********************悬停渐变盒子******************/
 .hover-box:hover{
-	color: #fff;
+	color: #fff !important;
 	background: -webkit-gradient(linear,left top,right top,from(#17e66c),to(#10c55b));
     background: -webkit-linear-gradient(left,#17e66c,#10c55b);
     background: -moz-oldlinear-gradient(left,#17e66c,#10c55b);
@@ -223,15 +307,9 @@
 }
 
 /***********图标消失*************/
-.qt-header .qt-container .hover-box:hover .iconfont{
-	display:none;
-}
-
+.qt-header .qt-container .hover-box:hover .iconfont{ display:none; }
 /*************显示文字***************/
-.qt-header .qt-container .hover-box:hover a{
-	display:block;
-}
-
+.qt-header .qt-container .hover-box:hover a{ display:block; }
 /*******************************************************************************/
 
 /******************中间导航栏（导航栏须放在版心容器上 因顶部版心容器高度塌陷，不会遮住导航栏）****************/
@@ -243,21 +321,33 @@
 	left: 0;
 	top: 0;
 	text-align: center;
-	z-index: 10;
 }
 
 /****************导航栏搜索栏******************/
 
 /*****显示*******/
-.qt-header-fixed .qt-nav-search{
-	display: inline-block !important;
+.qt-header-fixed .search-wrap{ display: inline-block !important; }
+
+/************宽度变大 搭配下方translation 出现过渡动画************/
+.qt-header-fixed .search-wrap.focus{ width: 570px; }
+
+.qt-header-fixed .search-wrap.focus .search-result{ display: block; }
+
+/*********隐藏隔壁菜单栏***********/
+.qt-header-fixed .search-wrap.focus~.qt-nav-wrap{
+	width: 0;
+	overflow: hidden;
 }
 
-.qt-nav .qt-nav-search{
+
+/************搜索栏容器***********/
+.qt-nav .search-wrap{
 	position: relative;
 	width: 400px;
     height: 40px;
-    /*display: none;*/
+    transition: width 0.28s; 
+    -moz-transition: width 0.28s; /* Firefox 4 */
+	-webkit-transition: width 0.28s; /* Safari 和 Chrome */
    	display: none;
     vertical-align: middle;
     margin-right: 10px;
@@ -268,68 +358,9 @@
     z-index: 8;
 }
 /******分类*******/
-.qt-nav .qt-nav-search .btn-classify{
-	position: absolute;
-	left: 0;
-	width: 83px;
-	height: 100%;
-	line-height: 40px;
-	font-size: 14px;
-	color: #666;
-	text-align: center;
-	background: #f7f7f7;
-	border-radius: 4px 0 0 4px;
-    cursor: pointer;
-}
-
-.qt-nav .qt-nav-search .btn-classify .iconfont {
-    font-size: 12px;
-    color: #666;
-    margin-right: 5px;
-    vertical-align: middle;
-}
-/******输入框*******/
-.qt-nav .qt-nav-search .input-search{
-	width: 100%;
-	height: 100%;
-	padding: 0 83px;
-}
-
-.qt-nav .input-search input {
-    width: 100%;
-    height: 100%;
-    font-size: 12px;
-    color: #666;
-}
-
-/******搜索按钮*******/
-.qt-nav-search .btn-search{
-	position: absolute;
-	display: inline-block;
-    right: 1px;
-    top: 0;
-    width: 84px;
-    height: 100%;
-    line-height: 40px;
-    margin: 0 -1px 0 0;
-    border-radius: 4px;
-    cursor: pointer;
-    text-align: center;
-    background: -webkit-gradient(linear,left top,right top,from(#17e66c),to(#10c55b));
-    background: -webkit-linear-gradient(left,#17e66c,#10c55b);
-    background: -moz- oldlinear-gradient(left,#17e66c,#10c55b);
-    background: linear-gradient(to right,#17e66c,#10c55b);
-    border: 0;
-}
-
-.btn-search .iconfont{
-	color: #fff;
-	font-size: 24px;
-}
+.qt-nav .search-wrap .btn-classify{ line-height: 40px; }
 
 /***********导航栏菜单栏设置行内块级 **************/
-
-
 /******菜单栏样式******/
 .qt-nav .qt-nav-wrap{
 	display: inline-block;
@@ -339,7 +370,7 @@
 	color: #666;
 }
 
-.qt-nav .qt-nav-wrap a{
+.qt-nav .qt-nav-wrap>a{
 	position: relative;
 	display: block;
 	padding: 0 16px;
@@ -366,30 +397,21 @@
     z-index: 5;
 }
 
-.qt-nav .hover-box:hover .arrow:after{
-	display: block;
-}
+.qt-nav .hover-box:hover .arrow:after{ display: block; }
 
 /************蓝色***********/
 .qt-nav .blue:hover{
-	background-image: -webkit-gradient(linear,left top,right top,from(#0f98ff),to(#1980ff));
     background-image: -webkit-linear-gradient(left,#0f98ff,#1980ff) !important;
-    background-image: -moz-oldlinear-gradient(left,#0f98ff,#1980ff);
     background-image: linear-gradient(to right,#0f98ff,#1980ff) !important;
     border-color: #0f98ff !important;
 }
 
-.qt-nav .blue .arrow:after{
-	border-top-color: #148cff !important;
-}
+.qt-nav .blue .arrow:after{ border-top-color: #148cff !important; }
 
 /***********中间导航栏下拉****************/
 
 /******显示*******/
-.qt-nav-wrap:hover .qt-nav-wrap-drop{
-	display: flex;
-}
-
+.qt-nav-wrap:hover .qt-nav-wrap-drop{ display: flex; }
 
 /******下拉框样式*******/
 .qt-nav-wrap-drop{
@@ -411,8 +433,7 @@
 /********中间导航栏下拉列表************/
 .qt-nav-wrap-drop a{
 	position: relative;
-    /*display: inline-block;*/
-    padding-top: 22px;
+    line-height: 78px;
     width: 112px;
     height: inherit;
     text-align: center;
@@ -430,26 +451,154 @@
 	color: #10c55b;
 }
 
-.qt-nav .blue a>i{
-	color: #0f98ff;
-}
+.qt-nav .blue a>i{ color: #0f98ff; }
 
 .qt-nav-wrap-drop a>span{
 	font-size: 14px;
     color: #666;
 }
 /*******添加悬浮样式********/
-.qt-nav-wrap-drop a:hover span{
-	color: #10c55b;
-}
+.qt-nav-wrap-drop a:hover span{ color: #10c55b; }
 
-.qt-nav .blue a:hover span{
-	color: #0f98ff;
-}
-
-
+.qt-nav .blue a:hover span{ color: #0f98ff; }
 
 /***********************************************************************/
+
+
+/********************************底部页脚容器******************************/
+
+/*******页脚（上）*******/
+.qt-footer-top{
+	padding: 30px 0 0 18px;
+    height: 263px;
+}
+
+
+.qt-footer-top dl{ width: 150px; }
+
+.qt-footer-top dl:first-child{ width: 160px; }
+
+.qt-footer-top dd a {
+    font-size: 12px;
+    line-height: 2;
+    color: #888;
+}
+
+
+/*******页脚上半部右边（其他服务）*********/
+.qt-footer-top .qt-other-service{
+	width: 310px;
+}
+
+.qt-footer-top .qt-other-service p{
+	color: #666;
+	font-size: 18px;
+}
+/***********使用精灵图 并控制小图标样式****************/
+.qt-footer-top .service-email i, .qt-footer-top .service-tel i
+,.qt-footer-top .service-qq i,.qt-footer-bottom .qt-footer-bottom-icon a
+,.qt-footer-bottom .icon-badge{
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    vertical-align: middle;
+    background: url(../img/common.png) no-repeat;
+}
+/*****样式*******/
+.service-title{ margin-bottom: 30px; }
+.service-tel{ margin-bottom: 15px; }
+.service-email{ margin-bottom: 24px; }
+.service-qq{ width: 140px;height: 40px;line-height: 40px; border-radius: 4px; color: #fff;}
+/*****小图标在精灵图位置*******/
+.service-tel i{ background-position: -65px -176px !important; }
+.service-email i{ background-position: -34px -176px !important; }
+.service-qq i{ background-position: -1px -176px !important;margin-right: 10px; }
+.service-tel em {font-size: 14px;}
+
+/*******按钮悬浮滤镜********/
+.service-qq:hover{ -webkit-filter: brightness(105%); box-shadow: 0 3px 3px #E9E9E9;}
+
+/*******页脚(下)*********/
+.qt-footer-bottom{
+	border-top: 1px solid #ccc;
+    height: 55px;
+    line-height: 55px;
+    padding-left: 18px;
+}
+
+.qt-footer-bottom p{ font-size: 12px; color: #888; }
+.qt-footer-bottom .qt-footer-bottom-icon a{ margin-right: 20px; }
+.icon-sina { background-position: -65px -206px !important; }
+.icon-wechat { background-position: -35px -206px !important; }
+.qt-footer-bottom .qt-footer-bottom-href{ margin-left: 14px; }
+.qt-footer-bottom .qt-footer-bottom-href a{ display: inline-block; margin-right: 18px; }
+.qt-footer-bottom .icon-badge{
+	width: 23px !important;
+	height: 25px !important;
+	background-position: -163px -20px !important;
+}
+
+/********************************中心内容******************************/
+.qt-content .qt-search{
+	position: relative;
+	background: #fff;
+	height: 108px;
+	padding-top: 20px;
+}
+.qt-content .qt-search .qt-container{
+	height: 46px;
+}
+
+.qt-content .qt-search .search-wrap{
+	position: relative;
+    width: 75%;
+    height: 100%;
+    margin: 0 auto;
+    border: 1px solid #e9e9e9;
+    border-radius: 4px;
+    padding-right: 100px;
+    z-index: 8;	
+}
+.qt-search .search-wrap .btn-search{ width: 100px; }
+.qt-search .search-wrap .search-result{ width: 89%; }
+
+/********显示搜索结果**********/
+.qt-content .qt-search .search-wrap.focus .search-result{ display: block; }
+
+/**************热搜************/
+.qt-content .qt-search .search-hot{
+	width: 75%;
+	font-size: 12px;
+	color: #999;
+	margin: 7px auto;
+}
+.qt-content .qt-search .search-hot span{ margin-right: 6px; }
+.qt-content .qt-search .search-hot a{ margin-right: 12px; }
+.qt-content .qt-search .search-hot .text-green{ color: #10c55b!important; }
+
+/**************右侧内容************/
+.qt-content .qt-search .search-rank{
+	position: absolute;
+	right: 0;
+	top: -3px;
+}
+.qt-content .qt-search .search-rank a{
+	display: inline-block;
+	vertical-align: middle;
+	height: 70px;
+}
+.qt-content .qt-search .search-rank a:nth-child(2) img{ padding-top: 13px; }
+
+/****************轮播图******************/
+.qt-content .qt-swiper{
+	position: relative;
+	width: 100%;
+	height: 320px;
+	background: black;
+}
+
+/****************首页内容******************/
+.qt-content .qt-main{ margin-top: 36px; }
 
 /**************响应式设置版心大小（小于1200px触发）*****************/
 @media only screen and (max-width: 1200px) {
@@ -458,6 +607,4 @@
 	}
 }
 
-body{
-	height: 1200px;
-}
+qt-nav-search
