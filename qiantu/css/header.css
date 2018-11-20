@@ -1,3 +1,6 @@
+/*********设置背景颜色***********/
+body{ background-color: #f6f6f6; }
+
 /*************版心容器****************/
 .qt-container{
 	position: relative;
@@ -10,8 +13,8 @@
 	position: relative;
 	width: 100%;
 	min-width: 1200px;
-	background-color: #fff;
 }
+.qt-header,.qt-footer{ background-color: #fff; }
 
 /*********颜色***********/
 .green{
@@ -596,9 +599,157 @@
 	height: 320px;
 	background: black;
 }
+/******轮播图盒子******/
+.qt-swiper .img-container{
+	position: relative;
+	width: 100%;
+	height: inherit;
+}
+.qt-swiper .img-container>.img-box{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: inherit;
+	transition: opacity .4s;
+	opacity: 0;
+}
+.qt-swiper .img-container>.img-box:first-child{ opacity: 1; }
+
+.qt-swiper .img-container>.img-box a{
+	display: block;
+}
+.qt-swiper .img-container>.img-box a img{ height: 320px; max-width: 100%; width: 100%;}
+
+/*******前后按钮*********/
+.qt-swiper .next,.qt-swiper .pre{
+	position: absolute;
+    background: url(../img/lun.png) no-repeat;
+    height: 320px;
+    width: 50px;
+    display: none;
+    top: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; 
+}
+.qt-swiper .pre{
+	left: 0;
+	background-position: 0;
+}
+.qt-swiper .next{
+	right: 0;
+	background-position: -51px;
+}
+
+/********悬浮效果***********/
+.qt-swiper:hover .pre,.qt-swiper:hover .next{ display: block; opacity: 1;}
+.qt-swiper .pre:hover{ background-position: -153px; }
+.qt-swiper .next:hover{ background-position: -102px; }
+
+/******************标签*******************/
+.qt-swiper .img-tab{
+	position: absolute;
+	height: 18px;
+	line-height: 18px;
+	left: 0;
+	width: 100%;
+	top: 292px;
+	text-align: center;
+}
+
+.qt-swiper .img-tab li{
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	background: #999;
+	transition: all .2s;
+	margin: 2px 1px;
+	cursor: pointer; 
+}
+.qt-swiper .img-tab li.active{ background-color: #13D564; }
 
 /****************首页内容******************/
 .qt-content .qt-main{ margin-top: 36px; }
+
+
+/***************标题***************/
+.qt-main .main-title{ margin-bottom: 20px; }
+
+.main-title .title { font-size: 24px; color: #666; }
+.main-title .other-topic, .main-title .to-more { line-height: 30px; }
+.main-title .other-topic a, .main-title .to-more a {
+    display: inline-block;
+    margin-left: 30px;
+    font-size: 14px;
+    color: #888;
+}
+/********图标*********/
+.main-title .iconfont {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(../img/common.png) no-repeat;
+    vertical-align: bottom;
+    margin-right: 10px;
+}
+.main-title .jx { background-position: -96px -415px; }
+.main-title .yc { background-position: -126px -415px; }
+
+/*****************弹性盒子*********************/
+.qt-main .flex-container{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.qt-main .select-topic,.qt-main .box-topic{ 
+	position: relative; 
+	width: 100%; 
+	margin-bottom: 60px; 
+	overflow: hidden;
+}
+.qt-main .flex-container .flex-box{ flex: 1; }
+.qt-main .select-topic .qt-topic-list,.qt-main .box-topic .qt-topic-list{
+	position: relative;
+	height: 196px;
+	background-color: #0F98FF;
+	margin-left: 20px;
+}
+/********轮播*******/
+.qt-main .box-topic .flex-container{ width: 200%;}
+.qt-main .box-topic .flex-container .qt-topic-list{ height: 413px; }
+
+.qt-main .select-topic .qt-topic-list:nth-child(5n-4)
+,.qt-main .box-topic .qt-topic-list:nth-child(5n-4){ margin-left: 0; }  	/**(5n-4)=从1开始，如果是（5n+0）是从第5个开始**/
+
+/***********精选收藏夹悬浮容器***********/
+.qt-main .select-topic .topic-des{
+	opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.5);		/**遮罩层**/
+}
+.qt-main .select-topic .topic-des p{
+	color: #fff;
+	visibility: hidden;
+	transform: translateY(200px);
+	transition: all .28s; 
+	width: 209px;
+	height: 100px;
+	margin: 50px 0 0 40px;
+	padding: 12px 0 0;
+	border: 1px solid #fff;
+	vertical-align: middle;
+	text-align: center;
+}
+/***********精选收藏夹悬浮效果***********/
+.qt-main .select-topic .qt-topic-list:hover .topic-des{ opacity: 1; }
+.qt-main .select-topic .qt-topic-list:hover .topic-des p{ transform: translateY(0); visibility: visible; }
 
 /**************响应式设置版心大小（小于1200px触发）*****************/
 @media only screen and (max-width: 1200px) {
@@ -607,4 +758,3 @@
 	}
 }
 
-qt-nav-search

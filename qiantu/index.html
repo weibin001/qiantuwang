@@ -254,9 +254,106 @@
 					</div>
 				</section>
 			</section>
-			<section class="qt-swiper"></section>
+			<section class="qt-swiper" id="swiper">
+				<div class="img-container">
+					<div class="img-box">
+						<a href="#">
+							<img src="img/swiper/5b7e4e41ec97d.png"/>
+						</a>
+					</div>
+					<div class="img-box">
+						<a href="#">
+							<img src="img/swiper/5be702337df0d.jpg"/>
+						</a>
+					</div>
+					<div class="img-box">
+						<a href="#">
+							<img src="img/swiper/5becde01777f4.jpg"/>
+						</a>
+					</div>
+					<div class="img-box">
+						<a href="#">
+							<img src="img/swiper/5bee9fdc0fb0f.jpg"/>
+						</a>
+					</div>
+				</div>
+				<a class="btn pre"></a>
+				<a class="btn next"></a>
+				<ul class="img-tab">
+					<li class="active" data-tab = "0"></li>
+					<li data-tab = "1"></li>
+					<li data-tab = "2"></li>
+					<li data-tab = "3"></li>
+				</ul>
+			</section>
 			<section class="qt-main">
-				<div class="qt-container" style="height: 1200px;background: blue;"></div>
+				<div class="qt-container">
+					<div class="main-title clearfix">
+						<div class="pull-left">
+							<a href="#">
+								<i class="iconfont jx"></i>
+								<span class="title">精选收藏夹</span>
+							</a>
+						</div>
+						<div class="pull-left other-topic">
+							<a href="#">热门趋势</a>
+							<a href="#">优秀设计师</a>
+							<a href="#">优秀配图</a>
+							<a href="#">PPT设计</a>
+							<a href="#">猪猪贺岁</a>
+						</div>
+						<div class="pull-right to-more">
+							<a href="#">更多>></a>
+						</div>
+					</div>
+					<div class="flex-container select-topic">
+						<div class="flex-box qt-topic-list">
+							<a href="#">
+								<img class="img-responsive" src="img/select-topic/5bf21864429d8.jpg"/>
+								<div class="topic-des">
+									<p>
+										<span>看趋势 | 复古肌理</span>
+										<br />
+										<em>OLD-SCHOOL即视感</em>
+									</p>
+								</div>
+							</a>
+						</div>
+						<div class="flex-box qt-topic-list"></div>
+						<div class="flex-box qt-topic-list"></div>
+						<div class="flex-box qt-topic-list"></div>
+					</div>
+					<div class="main-title clearfix">
+						<div class="pull-left">
+							<a href="#">
+								<i class="iconfont yc"></i>
+								<span class="title">商用海报</span>
+							</a>
+						</div>
+						<div class="pull-left other-topic">
+							<a href="#">旅游海报</a>
+							<a href="#">招聘海报</a>
+							<a href="#">美食海报</a>
+							<a href="#">节日海报</a>
+							<a href="#">促销海报</a>
+						</div>
+						<div class="pull-right to-more">
+							<a href="#">更多>></a>
+						</div>
+					</div>
+					<div class="box-topic">
+						<div class="flex-container">
+							<div class="flex-box qt-topic-list"></div>
+							<div class="flex-box qt-topic-list"></div>
+							<div class="flex-box qt-topic-list"></div>
+							<div class="flex-box qt-topic-list"></div>
+							<div class="flex-box qt-topic-list"></div>
+							<div class="flex-box qt-topic-list"></div>
+							<div class="flex-box qt-topic-list"></div>
+							<div class="flex-box qt-topic-list"></div>
+						</div>
+					</div>
+				</div>
 			</section>
 		</article>
 
@@ -363,17 +460,22 @@
 
 </html>
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/swiper.js" ></script>
 <script>
-	$(window).ready(function() {
-		headerfix();
-	})
-
 	$(window).scroll(function() {
 		headerfix();
 	});
-
+	
+	//轮播
+	(function(){
+		$.swiper.startplay('#swiper','.img-container','.img-box')
+	})();
+	
+	
 	//显示搜索结果
 	(function() {
+		//载入页面时判断顶部导航栏状态
+		headerfix();
 		//顶部导航栏	
 		$('.qt-header .search-wrap input').focus(function() {
 			$('.qt-header .search-wrap').addClass('focus');
@@ -402,6 +504,7 @@
 		})
 	})();
 	
+	
 
 	/*******设置顶部导航栏*******/
 	function headerfix() {
@@ -419,4 +522,6 @@
 			}
 		}
 	}
+	
+	
 </script>
